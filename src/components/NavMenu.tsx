@@ -10,7 +10,7 @@ export const NavMenu = (props: any) => {
             <ul className="nav-bar-menu-container">
                 <li onClick={() => setSelected(selected === 0 ? -1 : 0)}>
                     <span className="nav-bar-menu-title" >Features</span>
-                    { selected == 0 && <ul className='nav-bar-menu-container-subnav'>
+                    { selected === 0 && <ul className='nav-bar-menu-container-subnav'>
                         <li className='nav-bar-menu-todo-list'>Todo List</li>
                         <li className='nav-bar-menu-calendar'>Calendar</li>
                         <li className='nav-bar-menu-reminders'>Reminders</li>
