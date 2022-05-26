@@ -1,0 +1,145 @@
+ul, li { margin-left: 0; padding-left: 0; }
+
+.nav-bar-container {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    gap: 40px;
+    padding-top: 20px;
+    
+    li {
+        cursor: pointer;
+        text-align: left;
+    }
+}
+
+.nav-bar-features, .nav-bar-company {
+    position: relative;
+}
+
+.nav-bar-features-subnav, .nav-bar-company-subnav {
+    display: none;
+}
+
+.nav-bar-option {
+    list-style: none;
+    position: absolute;
+    right: 15px;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.nav-bar-features:hover > .nav-bar-features-subnav {
+    display: block;
+    background-color: white;
+    @extend .nav-bar-option;
+}
+
+.nav-bar-company:hover > .nav-bar-company-subnav {
+    display: block;
+    background-color: white;
+    @extend .nav-bar-option;
+    width: 5rem; 
+    & > li {
+        padding: 5px;
+    }
+}
+
+.nav-bar-arrow {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 6px;
+    background-repeat: no-repeat;    
+    background-position: center;
+    background-size: contain;
+}
+
+.nav-bar-option-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    &::after {
+        @extend .nav-bar-arrow;
+        background-image: url('../assets/icon-arrow-down.svg');
+    }
+}
+
+.nav-bar-company:hover > .nav-bar-option-title::after, .nav-bar-features:hover > .nav-bar-option-title::after {
+    @extend .nav-bar-arrow;    
+    background-image: url('../assets/icon-arrow-up.svg');
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 41%);
+}
+
+.title:hover {
+    color: hsl(0, 0%, 8%)
+}
+
+.sub-nav-icon {
+    content: "";
+    width: 15px;
+    height: 18px;   
+    background-repeat: no-repeat;    
+    background-position: center;
+    background-size: contain;
+}
+
+.nav-bar-todo-list, .nav-bar-calendar, .nav-bar-reminders, .nav-bar-planning {
+    display: flex;
+    margin-bottom: 5px;
+    text-align: left;
+    gap: 15px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+
+.nav-bar-todo-list::before {
+    @extend .sub-nav-icon;
+    background-image: url('../assets/icon-todo.svg');
+}
+
+.nav-bar-calendar::before {
+    @extend .sub-nav-icon;
+    background-image: url('../assets/icon-calendar.svg');
+}
+
+.nav-bar-reminders::before {
+    @extend .sub-nav-icon;
+    background-image: url('../assets/icon-reminders.svg');
+}
+
+.nav-bar-planning::before {
+    @extend .sub-nav-icon;
+    background-image: url('../assets/icon-planning.svg');
+}
+
+.nav-bar-container-mobile {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+
+    hr {    
+        border: 1px solid hsl(0, 0%, 8%);
+        width: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-bar-container {
+        display: none;
+    }
+
+    .nav-bar-container-mobile {
+        display: inline-block;
+    }
+}

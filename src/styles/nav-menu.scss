@@ -1,0 +1,160 @@
+.nav-menu-container {    
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 20%;
+    background-color: hsl(0, 0%, 98%);
+    padding: 10px 30px
+}
+
+ul, li { margin-left: 0; padding-left: 0; }
+
+.nav-bar-menu-container {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 20px;
+    padding-top: 20px;
+    margin-top: 40px;
+    li {
+        cursor: pointer;
+        text-align: left;
+    }
+}
+
+.nav-bar-menu-arrow {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 6px;
+    background-repeat: no-repeat;    
+    background-position: center;
+    background-size: contain;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 500;
+    color: hsl(0, 0%, 41%);
+}
+
+.nav-bar-menu-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    @extend .title;
+
+    &::after {
+        @extend .nav-bar-menu-arrow;
+        background-image: url('../assets/icon-arrow-down.svg');
+    }
+}
+
+.sub-nav-menu-icon {
+    content: "";
+    width: 15px;
+    height: 18px;   
+    background-repeat: no-repeat;    
+    background-position: center;
+    background-size: contain;
+}
+
+.nav-bar-menu-container-subnav {
+    list-style: none;
+    margin-top: 10px;
+    margin-left: 2rem;
+
+    & li {
+        display: flex;
+        margin-bottom: 5px;
+        text-align: left;
+        gap: 15px;
+        padding-bottom: 5px;
+        font-size: 15px;
+    }
+
+    
+    .nav-bar-menu-todo-list::before {
+        @extend .sub-nav-menu-icon;
+        background-image: url('../assets/icon-todo.svg');
+    }
+
+    .nav-bar-menu-calendar::before {
+        @extend .sub-nav-menu-icon;
+        background-image: url('../assets/icon-calendar.svg');
+    }
+
+    .nav-bar-menu-reminders::before {
+        @extend .sub-nav-menu-icon;
+        background-image: url('../assets/icon-reminders.svg');
+    }
+
+    .nav-bar-menu-planning::before {
+        @extend .sub-nav-menu-icon;
+        background-image: url('../assets/icon-planning.svg');
+    }
+}
+
+.container-header-content-menu-actions {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    gap: 20px;
+    bottom: 50px;
+    width: 80%;
+
+    .login-action-menu {
+        padding: 5px 20px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color:  hsl(0, 0%, 41%);
+    }
+
+    .login-action-menu:hover {
+        color: black;
+    }
+
+    .register-action-menu {
+        width: 100%;
+        padding: 10px 20px;
+        border: 2.6px solid hsl(0, 0%, 41%);
+        cursor: pointer;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        border-radius: 12px;
+        color:  hsl(0, 0%, 41%);
+        background-color: transparent;
+    }
+
+    .register-action-menu:hover {
+        color: black;
+        border: 2.6px solid black;
+    }
+}
+
+.container-close-button {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    cursor: pointer;
+    
+    hr {
+        width: 30px;
+        border: .5px solid black;
+
+        &:nth-child(1){
+            transform: rotate(-60deg);
+        }
+
+        &:nth-child(2){
+            transform: rotate(35deg)
+        }
+    }
+}

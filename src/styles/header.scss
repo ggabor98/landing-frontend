@@ -1,0 +1,61 @@
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 40px
+}
+
+.container-header-content-navigation {
+    display: flex;
+    gap: 50px;
+}
+
+.container-header-content-actions {
+    display: flex;
+    gap: 20px;
+    height: 40px;
+    padding-top: 20px;
+
+    .login-action {
+        padding: 5px 20px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color:  hsl(0, 0%, 41%);
+    }
+
+    .login-action:hover {
+        color: black;
+    }
+
+    .register-action {
+        padding: 10px 20px;
+        border: 2.6px solid hsl(0, 0%, 41%);
+        cursor: pointer;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        border-radius: 12px;
+        color:  hsl(0, 0%, 41%);
+        background-color: transparent;
+    }
+
+    .register-action:hover {
+        color: black;
+        border: 2.6px solid black;
+    }
+}
+
+.title-header {
+    color: hsl(0, 0%, 8%);
+    font-size: 40px;
+    font-weight: 800;
+}
+
+@media (max-width: 900px) {
+    .container-header-content-actions {
+        display: none;
+    }
+}
